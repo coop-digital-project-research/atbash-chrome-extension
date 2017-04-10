@@ -65,3 +65,13 @@ function addClass(el, className) {
 }
 
 setInterval(findAndModifyAttachmentButton, 2000);
+
+setTimeout(triggerSecureSendDialog, 5000)
+
+function triggerSecureSendDialog(){
+  chrome.runtime.sendMessage({greeting: "hello"}, handleSecureSendDialogResponse);
+}
+
+function handleSecureSendDialogResponse(response) {
+  console.log(response.farewell);
+}
