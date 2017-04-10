@@ -16,6 +16,11 @@ chrome.runtime.onMessage.addListener(
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request.greeting == "hello")
+      var width = 615;
+      var height = 400;
+      var left = Math.round((screen.width/2)-(width/2));
+      var top = Math.round((screen.height/2)-(height/2));
+      chrome.windows.create({ url: "options.html", type: "popup", width: width, height: height, left: left, top: top });
       sendResponse({farewell: "goodbye"});
   }
 );
