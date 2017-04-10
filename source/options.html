@@ -19,12 +19,13 @@
 <body>
   <form>
     <h1>Send files securely</h1>
+    <input type="file" multiple="multiple">
     <fieldset>
-      <input type="file" multiple="multiple">
-      <h2>Self-descruct</h2>
+      <legend>Self-descruct</legend>
       <label><input type="radio" name="expire">5 minutes after download</label>
       <label><input type="radio" name="expire">at the end of the day</label>
     </fieldset>
+    
     <input type="button" value="Create Secure Link">
   </form> 
 </body>
