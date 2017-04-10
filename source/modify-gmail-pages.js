@@ -40,6 +40,7 @@ function createSafeSendButtonFromAttachmentButton(existingAttachmentButton) {
   safeSendButton.setAttribute('data-tooltip', "Send files securely");
 
   addClass(safeSendButton, safeSendButtonClass);
+  safeSendButton.addEventListener('click', triggerSecureSendDialog, false);
   return safeSendButton;
 }
 
@@ -65,8 +66,6 @@ function addClass(el, className) {
 }
 
 setInterval(findAndModifyAttachmentButton, 2000);
-
-setTimeout(triggerSecureSendDialog, 5000)
 
 function triggerSecureSendDialog(){
   chrome.runtime.sendMessage({greeting: "hello"}, handleSecureSendDialogResponse);
