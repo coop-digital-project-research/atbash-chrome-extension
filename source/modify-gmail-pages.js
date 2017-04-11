@@ -5,7 +5,6 @@
 var safeSendButtonClass = "safeSendButton";
 
 function findAndModifyAttachmentButton() {
-  console.debug("Looking for attachment button");
   // button container div is ".a8X.gU"
   // .a1.aaA.aMZ is the attachment button
   // i.a1.aaA.aMZ is the outer button container
@@ -18,7 +17,6 @@ function findAndModifyAttachmentButton() {
     }
 
   }
-
 
 }
 
