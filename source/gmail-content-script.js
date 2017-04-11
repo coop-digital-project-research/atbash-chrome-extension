@@ -24,8 +24,6 @@ function cloneAttachmentButton(buttonContainer) {
   var existingAttachmentButton = getElementsByXPath('.//div[@command="Files"]', parent=buttonContainer)[0];
 
   if(existingAttachmentButton) {
-    existingAttachmentButton.style.backgroundColor = "pink";
-
     var safeSendButton = createSafeSendButtonFromAttachmentButton(existingAttachmentButton);
     buttonContainer.insertBefore(safeSendButton, existingAttachmentButton);
   }
@@ -36,7 +34,8 @@ function createSafeSendButtonFromAttachmentButton(existingAttachmentButton) {
   var safeSendButton = existingAttachmentButton.cloneNode(true);
   var relatedInputArea = getRelatedInputElement(existingAttachmentButton);
 
-  safeSendButton.style.backgroundColor = "green";
+  safeSendButton.style.backgroundColor = "#CEFFC2";
+  safeSendButton.style.backgroundImage = 'url(' + chrome.extension.getURL('lock.png') + ')';
   safeSendButton.setAttribute('data-tooltip', "Send files securely");
 
   addDataRelatedInputUUIDAttributeToNodeAndChildren(safeSendButton, relatedInputArea.getAttribute('data-uuid'));
