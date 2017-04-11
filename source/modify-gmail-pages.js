@@ -141,5 +141,39 @@ function triggerSecureSendDialog(event){
 }
 
 function handleSecureSendDialogResponse(response) {
-  console.log(response.farewell);
+  console.log("handleSecureSendDialogResponse: ", response);
+}
+
+chrome.runtime.onMessage.addListener(
+  function(message, sender, sendResponse) {
+    console.log("gmail content script got message ", message);
+
+    if(message.messageType == "updateInputElementWithSecureURL") {
+      console.log("I'm going to update element UUID ", message.uuid, " with URL ", message.secureURL);
+      addUrlToInputElementWithUUID(message.secureURL, message.uuid);
+    }
+  });
+
+
+function addUrlToInputElementWithUUID(secureURL, uuid) {
+  var elementsWithDataUUID = getElementsByAttribute("data-uuid");
+  console.log("Found elements with a data-uuid: ", elementsWithDataUUID);
+
+  for(var i = 0 ; i < elementsWithDataUUID.length ; ++i) {
+    if(elementsWithDataUUID[i].getAttribute("data-uuid") == uuid) {
+      addUrlToInputElement(elementsWithDataUUID[i], secureURL);
+    } else {
+      console.debug("Element has wrong UUID, != ", uuid);
+    }
+  }
+
+}
+
+function addUrlToInputElement(element, secureURL) {
+  console.debug("Adding secureURL ", secureURL, " to element ", element);
+  if(element.innerText.length > 0) {
+    element.innerText += "\n\n";
+  }
+
+  element.innerText += "Secure download link:\n" + secureURL;
 }
