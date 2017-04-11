@@ -62,6 +62,10 @@ function generateAndSendFakeUrl() {
 
   console.log("Sending message to tab id ", gmailTabId, ": ", message);
 
-  chrome.tabs.sendMessage(gmailTabId, message);
-  window.close();
+  document.getElementById('select-file').style.display = 'none';
+
+  setTimeout(function() {
+    chrome.tabs.sendMessage(gmailTabId, message);
+    window.close();
+  }, 10000)
 }
