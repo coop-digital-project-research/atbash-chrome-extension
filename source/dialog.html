@@ -2,17 +2,12 @@
 <head>
   <title>Atbash</title>
   <link rel="stylesheet" type="text/css" href="dialog.css" />
-  <style type="text/css">
-    body {
-      background: #DDD;
-    }
-  </style>
 </head>
 <body>
   <form id="atbash-dialog">
     <h1>Send files securely</h1>
 
-    <div class="box">
+    <div class="box" id="select-file">
       <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
       <label for="file-1">
         <svg width="34px" height="40px" viewBox="286 241 34 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -27,7 +22,16 @@
       <label><input type="radio" name="expire">at the end of the day</label>
     </fieldset>
     <input id="insertButton" type="button" value="Insert as Secure Link">
+
   </form>
+  <div id="encryption-progress">
+    <img src="padlock.gif">
+    <ul>
+      <li class="one">Encrypting files in browser</li>
+      <li class="two">Uploading encrypted files to server</li>
+      <li class="three">All done!</li>
+    </ul>
+  </div>
   <script src="dialog.js"></script>
 </body>
 </html>

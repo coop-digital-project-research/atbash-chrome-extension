@@ -62,6 +62,11 @@ function generateAndSendFakeUrl() {
 
   console.log("Sending message to tab id ", gmailTabId, ": ", message);
 
-  chrome.tabs.sendMessage(gmailTabId, message);
-  window.close();
+  document.getElementById('atbash-dialog').style.display = 'none';
+  document.getElementById('encryption-progress').style.display = 'block';
+
+  setTimeout(function() {
+    chrome.tabs.sendMessage(gmailTabId, message);
+    window.close();
+  }, 7000)
 }
