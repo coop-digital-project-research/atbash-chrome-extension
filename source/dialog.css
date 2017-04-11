@@ -1,11 +1,12 @@
-form#atbash-dialog {
+form#atbash-dialog,
+#encryption-progress {
   background: white;
   padding: 2rem;
-  width: 100%;
   margin: 0 auto;
   font-family: arial,sans-serif;
 }
-form#atbash-dialog h1 {
+form#atbash-dialog h1,
+#encryption-progress h1 {
   font-size: 20px;
 }
 form#atbash-dialog label {
@@ -31,6 +32,42 @@ form#atbash-dialog input[type="button"] {
 
 form#atbash-dialog fieldset {
     border: 1px solid #c4c4c4;
+}
+
+#encryption-progress {
+    display: none;
+}
+
+#encryption-progress ul {
+    font-size: 1.25rem;
+}
+
+#encryption-progress ul li {
+    opacity:0;   
+    line-height: 2;
+}
+
+#encryption-progress ul li.one {
+    animation:0.5s ease 2s normal forwards 1 fadein;
+}
+
+#encryption-progress ul li.two {
+    animation:0.5s ease 3s normal forwards 1 fadein;
+}
+
+#encryption-progress ul li.three {
+    animation:0.5s ease 4s normal forwards 1 fadein;
+    color: #118156;
+    font-weight: 600;
+}
+
+@keyframes fadein{from{opacity:0}
+to{opacity:1}
+}
+
+
+#encryption-progress img {
+    float: left;
 }
 
 /** input style **/
