@@ -48,11 +48,11 @@ form#atbash-dialog fieldset {
 }
 
 #encryption-progress ul li.one {
-    animation:0.5s ease 2s normal forwards 1 fadein;
+    animation:0.5s ease 0s normal forwards 1 fadein;
 }
 
 #encryption-progress ul li.two {
-    animation:0.5s ease 3s normal forwards 1 fadein;
+    animation:0.5s ease 2s normal forwards 1 fadein;
 }
 
 #encryption-progress ul li.three {
