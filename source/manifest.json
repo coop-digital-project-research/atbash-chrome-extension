@@ -20,5 +20,8 @@
   },
   "permissions": [
     "https://mail.google.com/mail/*"
+  ],
+  "web_accessible_resources": [
+    "lock.png"
   ]
 }
