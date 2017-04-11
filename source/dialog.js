@@ -42,7 +42,7 @@ var gmailTabId = null;
 
 chrome.runtime.onMessage.addListener(
   function(message, sender, sendResponse) {
-    console.log("options javascript got message ", message);
+    console.log("dialog.js got message ", message);
 
     if(message.messageType == "setInputElementUUID") {
       console.log("I'm going to send a secure link back to tab id ", message.gmailTabId, " UUID ", message.uuid);

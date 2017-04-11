@@ -22,7 +22,7 @@ chrome.runtime.onMessage.addListener(
       var _top = Math.round((screen.height/2)-(height/2));
 
       chrome.tabs.create({
-          url: chrome.extension.getURL('options.html'),
+          url: chrome.extension.getURL('dialog.html'),
           active: false
         }, function(tab) {
             // After the tab has been created, open a window to inject the tab
