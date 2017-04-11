@@ -7,7 +7,7 @@
   "content_scripts": [
   {
     "matches": ["https://mail.google.com/mail*"],
-    "js": ["modify-gmail-pages.js"]
+    "js": ["gmail-content-script.js"]
   }
   ],
   "background": {
