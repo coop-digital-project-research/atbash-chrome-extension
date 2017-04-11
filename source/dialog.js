@@ -57,7 +57,7 @@ function generateAndSendFakeUrl() {
   var message = {
     messageType: "updateInputElementWithSecureURL",
     uuid: inputElementUUID,
-    secureURL: "https://atbash.io/7118dc90/#key=broad.hued.whir.lois.db.cone"
+    secureURL: "https://atbash.org/7118dc90/#key=broad.hued.whir.lois.db.cone"
   };
 
   console.log("Sending message to tab id ", gmailTabId, ": ", message);
