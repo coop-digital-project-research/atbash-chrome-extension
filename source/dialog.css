@@ -1,4 +1,4 @@
-form#atbash-options {
+form#atbash-dialog {
   background: white;
   padding: 2rem;
   width: 500px;
@@ -6,21 +6,21 @@ form#atbash-options {
   font-family: arial,sans-serif;
   border: 1px solid #acacac;
 }
-form#atbash-options h1 {
+form#atbash-dialog h1 {
   font-size: 20px;
 }
-form#atbash-options label {
+form#atbash-dialog label {
   display: block;
 }
-form#atbash-options input {
+form#atbash-dialog input {
   background-color: #f5f5f5;
 }
 
-form#atbash-options fieldset {
+form#atbash-dialog fieldset {
     margin: 2rem 0;
 }
 
-form#atbash-options input[type="button"] {
+form#atbash-dialog input[type="button"] {
     background: #118156;
     border: none;
     font-size: 12px;
@@ -30,7 +30,7 @@ form#atbash-options input[type="button"] {
     border-radius: 2px;
 }
 
-form#atbash-options fieldset {
+form#atbash-dialog fieldset {
     border: 1px solid #c4c4c4;
 }
 
