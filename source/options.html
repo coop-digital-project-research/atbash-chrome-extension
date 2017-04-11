@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Atbash</title>
+  <link rel="stylesheet" type="text/css" href="options.css" />
+  <style type="text/css">
+    body {
+      background: #DDD;
+    }
+  </style>
+</head>
+<body>
+  <form id="atbash-options">
+    <h1>Send files securely</h1>
+
+    <div class="box">
+      <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+      <label for="file-1">
+        <svg width="34px" height="40px" viewBox="286 241 34 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M286,245.000026 C286,242.790872 287.78349,241 289.994582,241 L306.097168,241 L315.997377,241 C318.207965,241 320,242.796425 320,245.000026 L320,276.999974 C320,279.209128 318.207968,281 315.999788,281 L290.000212,281 C287.790956,281 286,279.203575 286,276.999974 L286,245.000026 Z M306,244.993102 L306,251.006898 C306,253.21267 307.787773,255 309.993102,255 L316.006898,255 C318.21267,255 318.731574,253.731574 317.166891,252.166891 L308.833109,243.833109 C307.267099,242.267099 306,242.787773 306,244.993102 Z" id="file" fill="#FFFFFF"</path>
+        </svg> <span>Choose files&hellip;</span>
+      </label>
+    </div>
+
+    <fieldset>
+      <legend>Self-descruct</legend>
+      <label><input type="radio" name="expire" checked="checked">5 minutes after download</label>
+      <label><input type="radio" name="expire">at the end of the day</label>
+    </fieldset>
+    <input id="insertButton" type="button" value="Insert as Secure Link">
+  </form>
+  <script src="custom-file-input.js"></script>
+</body>
+</html>
