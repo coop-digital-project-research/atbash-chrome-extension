@@ -1,5 +1,6 @@
 // This code gets injected into every Gmail page so it has (limited) access
 // to the DOM etc.
+"use strict";
 
 var safeSendButtonClass = "safeSendButton";
 
