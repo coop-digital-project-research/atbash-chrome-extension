@@ -63,4 +63,5 @@ function generateAndSendFakeUrl() {
   console.log("Sending message to tab id ", gmailTabId, ": ", message);
 
   chrome.tabs.sendMessage(gmailTabId, message);
+  window.close();
 }
