@@ -62,6 +62,17 @@ function generateAndSendFakeUrl() {
 
   console.log("Sending message to tab id ", gmailTabId, ": ", message);
 
+  // Check for File API support - TODO: is this needed?
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+    var fileInput = document.getElementById('file-1');
+
+    console.log("fileInput.files: ", fileInput.files);
+
+  } else {
+    log.error('The File APIs are not fully supported in this browser.');
+  }
+
+
   document.getElementById('atbash-dialog').style.display = 'none';
   document.getElementById('encryption-progress').style.display = 'block';
 
