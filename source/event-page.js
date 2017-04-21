@@ -14,8 +14,17 @@ chrome.runtime.onMessage.addListener(
   function(messageFromGmail, sender, sendResponseToGmailContentScript) {
     console.debug("event page got message: ", messageFromGmail);
 
-    if (messageFromGmail.messageType == "openSecureSendDialog")
-      var gmailTabId = sender.tab.id;
+    if (messageFromGmail.messageType == "openSecureSendDialog") {
+      openDialog({
+        gmailTabId: sender.tab.id,
+        inputElementUUID: messageFromGmail.inputElementUUID
+      });
+    }
+  }
+);
+
+function openDialog(inputElementLocation) {
+
       var width = 615;
       var height = 400;
       var left = Math.round((screen.width/2)-(width/2));
@@ -41,11 +50,10 @@ chrome.runtime.onMessage.addListener(
                 tab.id,
                 {
                   messageType: "setInputElementUUID",
-                  gmailTabId: gmailTabId,
-                  uuid: messageFromGmail.inputElementUUID
+                  gmailTabId: inputElementLocation.gmailTabId,
+                  uuid: inputElementLocation.inputElementUUID
                 }
               );
             });
         });
-  }
-);
+}
