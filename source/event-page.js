@@ -4,10 +4,7 @@
 
 // Called when the user clicks on the browser action (toolbar button)
 chrome.browserAction.onClicked.addListener(function(tab) {
-  // No tabs or host permissions needed!
-  chrome.tabs.create({
-    url: "https://mail.google.com/mail/#inbox?compose=new"
-  });
+  openDialog(null);
 });
 
 chrome.runtime.onMessage.addListener(
@@ -46,14 +43,16 @@ function openDialog(inputElementLocation) {
             }, function(createdWindow) {
               console.log("Created new window: ", createdWindow);
 
-              chrome.tabs.sendMessage(
-                tab.id,
-                {
-                  messageType: "setInputElementUUID",
-                  gmailTabId: inputElementLocation.gmailTabId,
-                  uuid: inputElementLocation.inputElementUUID
-                }
-              );
+              if(!!inputElementLocation) {
+                chrome.tabs.sendMessage(
+                  tab.id,
+                  {
+                    messageType: "setInputElementUUID",
+                    gmailTabId: inputElementLocation.gmailTabId,
+                    uuid: inputElementLocation.inputElementUUID
+                  }
+                );
+              }
             });
         });
 }
